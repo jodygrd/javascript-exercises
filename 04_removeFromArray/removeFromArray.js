@@ -1,16 +1,13 @@
 const removeFromArray = function(array, ...args) {
-    
+    let newArray = [];
     //iterate over the old array
-    for (let i = 0; i < array.length; i++){
-        //check all the arguments
-        for (arg of args) {
-            if (array[i] == arg){
-              array.splice(i, 1);
-              i--
-            }
+    for (element of array){
+        if (!args.includes(element)){
+            newArray.push(element);
         }
     }
-    return array;
+        
+    return newArray;
 };
 
 // Do not edit below this line
